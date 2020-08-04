@@ -1,9 +1,9 @@
 Scenario: Signing In
 Given I am on the main application page
 When I click on element located `By.Xpath(//a[contains(@href,"signin")])`
-When I click on element located `By.Xpath(//a[contains(@href, "https://www.imdb.com/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.imdb.com%2Fregistration%2Fap-signin-handler%2Fimdb_us&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=imdb_us&openid.mode=checkid_setup&siteState=eyJvcGVuaWQuYXNzb2NfaGFuZGxlIjoiaW1kYl91cyIsInJlZGlyZWN0VG8iOiJodHRwczovL3d3dy5pbWRiLmNvbS8_cmVmXz1sb2dpbiJ9&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&tag=imdbtag_reg-20")])`
-When I enter `qihsrvbymyjffyrzyu@awdrt.org` in field located `By.Xpath(//*[@id="ap_email"])`
-When I enter `qihsrvby` in field located `By.Xpath(//*[@id="ap_password"])`
+When I click on element located `By.Xpath(//span[contains(text(), "Sign in with IMDb")])`
+When I enter `${UserEmail}` in field located `By.Xpath(//*[@id="ap_email"])`
+When I enter `${UserPass}` in field located `By.Xpath(//*[@id="ap_password"])`
 When I click on element located `By.Xpath(//*[@id="signInSubmit"])`
 Then the text 'testing_profile' exists
 
@@ -20,6 +20,5 @@ Then the text 'Added to Watchlist' exists
 Scenario: Navigating, sorting and exporting Watchlist
 Given I am on the main application page
 When I click on element located `By.Xpath(//div[text()="Watchlist"])`
-When I click on element located `By.Xpath(//*[@id="lister-sort-by-options"])`
-When I click on element located `By.Xpath(//*[@id="lister-sort-by-options"]/option[5])`
+When I click on element located `By.Xpath(//span[contains(@class, "lister-widget-sprite lister-sort")])`
 When I click on element located `By.Xpath(//a[text()="Export this list"])`
