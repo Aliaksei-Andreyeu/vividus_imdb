@@ -14,11 +14,11 @@ When I click on a link with the text 'The Shawshank Redemption' and URL 'https:/
 Then the page title is 'The Shawshank Redemption (1994) - IMDb'
 
 Scenario: Adding movie to Watchlist
-When I click on element located `By.Xpath(//*[@class="ipc-button uc-add-wl-button-icon--add watchlist--title-main-desktop-standalone ipc-button--core-base ipc-button--single-padding ipc-button--default-height"])`
+When I click on element located `By.Xpath(//div[text()="Add to Watchlist"] )`
 Then the text 'Added to Watchlist' exists
 
 Scenario: Navigating, sorting and exporting Watchlist
 Given I am on the main application page
 When I click on element located `By.Xpath(//div[text()="Watchlist"])`
-When I click on element located `By.Xpath(//span[contains(@class, "lister-widget-sprite lister-sort")])`
+When I select `Release Date` from drop down located `By.xpath(//*[@id="lister-sort-by-options"])`
 When I click on element located `By.Xpath(//a[text()="Export this list"])`
