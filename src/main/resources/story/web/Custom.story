@@ -1,6 +1,6 @@
 Scenario: Signing In
 Given I am on the main application page
-When I click on element located `By.Xpath(//a[contains(@href,"signin")])`
+When I click on element located `By.Xpath(//div[@class="_3cMNCrSVkxQhCkVs1JLIib navbar__user sc-kpOJdX kPnwgD"]))`
 When I click on element located `By.Xpath(//span[contains(text(), "Sign in with IMDb")])`
 When I enter `${UserEmail}` in field located `By.Xpath(//*[@id="ap_email"])`
 When I enter `${UserPass}` in field located `By.Xpath(//*[@id="ap_password"])`
